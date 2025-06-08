@@ -6,9 +6,8 @@
 
 /* Hero Section Styles */
 header {
-  /* Add a background color to the hero section */
-  background-image: url(img/boliviainteligente-0pzxkrcM30s-unsplash.jpg); /* Light blue for Intel theme */
-  opacity: 0.8;
+  /* Use a blue gradient background for the hero section */
+  background: linear-gradient(135deg, #0071c5 0%, #00b4d8 100%); /* Blue gradient */
   padding: 40px 0; /* Add space above and below the hero */
   text-align: center; /* Center all text and images */
   min-height: 100vh; /* Make the hero section take up the full viewport height */
@@ -18,9 +17,10 @@ header {
 }
 
 header img {
-  /* Make the logo a bit smaller and add space below */
+  /* Center the logo in the hero section */
+  display: block;
+  margin: 0 auto 20px auto; /* Center horizontally and add space below */
   width: 150px;
-  margin-bottom: 20px;
 }
 
 header h1 {
