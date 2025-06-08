@@ -8,9 +8,9 @@
 header {
   /* Use a blue gradient background for the hero section */
   background: linear-gradient(135deg, #0071c5 0%, #00b4d8 100%); /* Blue gradient */
-  padding: 40px 0; /* Add space above and below the hero */
+  padding: 24px 0; /* Less space above and below the hero */
   text-align: center; /* Center all text and images */
-  min-height: 100vh; /* Make the hero section take up the full viewport height */
+  min-height: 40vh; /* Make the hero section smaller */
   display: flex; /* Use flex to center content vertically */
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center content vertically */
@@ -65,7 +65,7 @@ header p {
 }
 
 /* Timeline Section Styles */
-section {
+#timeline-section {
   /* Make the timeline section larger and center cards in the viewport */
   padding: 60px auto; /* More space above and below */
   background: #e6f0fa; /* Light blue background behind the cards */
@@ -81,7 +81,7 @@ section {
   scrollbar-color: #0071c5 #f9f9f9;
 }
 
-section > div {
+#timeline-section > div {
   /* Make each card take up the full viewport height and a smaller width */
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -101,14 +101,14 @@ section > div {
   left: 0.5rem; /* Move each card 0.5rem to the right */
 }
 
-section > div:hover {
+#timeline-section > div:hover {
   /* Add a smooth hover animation for cards */
   transform: translateY(-16px) scale(1.05) rotate(-1deg);
   box-shadow: 0 12px 32px rgba(0,113,197,0.15);
   border-color: #0071c5;
 }
 
-section img {
+#timeline-section img {
   /* Make images fit nicely in cards */
   width: 350px; /* All images are the same width */
   height: 180px; /* All images are the same height */
@@ -122,7 +122,7 @@ section img {
   margin-bottom: 12px;
 }
 
-section h2 {
+#timeline-section h2 {
   /* Year heading style */
   color: #0071c5;
   margin-bottom: 4px;
@@ -131,7 +131,7 @@ section h2 {
   font-weight: 700; /* Make the year heading bold */
 }
 
-section h3 {
+#timeline-section h3 {
   /* Card title style */
   margin-bottom: 8px;
   color: #222;
@@ -141,7 +141,7 @@ section h3 {
   position: relative; /* Needed for underline positioning */
 }
 
-section h3::after {
+#timeline-section h3::after {
   content: "";
   display: block;
   width: 100%; /* Underline spans the full width of the card */
@@ -151,7 +151,7 @@ section h3::after {
   margin: 10px 0 0 0; /* Space above underline, no horizontal margin */
 }
 
-section p {
+#timeline-section p {
   /* Card text style */
   color: #444;
   font-size: 1.25em; /* Make all paragraphs larger for better readability */
@@ -159,14 +159,14 @@ section p {
 }
 
 /* Hide the paragraph inside each card by default */
-section > div p {
+#timeline-section > div p {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s;
 }
 
 /* Show the paragraph when hovering on the card */
-section > div:hover p {
+#timeline-section > div:hover p {
   opacity: 1;
   visibility: visible;
 }
@@ -247,7 +247,7 @@ section > div:hover p {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  section {
+  #timeline-section {
     /* Stack cards vertically on mobile */
     flex-direction: column;
     gap: 1.2rem;
@@ -259,7 +259,7 @@ section > div:hover p {
     padding: 16px 0;
     scroll-snap-type: none;
   }
-  section > div {
+  #timeline-section > div {
     min-width: 90vw;
     max-width: 95vw;
     width: 95vw;
@@ -270,7 +270,7 @@ section > div:hover p {
     scroll-snap-align: unset;
     left: 0;
   }
-  section img {
+  #timeline-section img {
     max-width: 100%;
     height: auto;
   }
