@@ -1,0 +1,305 @@
+/* Add your CSS here */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');
+
+/* Hero Section Styles */
+header {
+  /* Add a background color to the hero section */
+  background-image: url(img/boliviainteligente-0pzxkrcM30s-unsplash.jpg); /* Light blue for Intel theme */
+  opacity: 0.8;
+  padding: 40px 0; /* Add space above and below the hero */
+  text-align: center; /* Center all text and images */
+  min-height: 100vh; /* Make the hero section take up the full viewport height */
+  display: flex; /* Use flex to center content vertically */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+header img {
+  /* Make the logo a bit smaller and add space below */
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  /* Make the main heading stand out */
+  font-size: 2.2em;
+  margin-bottom: 1rem;
+  color: #fff; /* Make the main heading white */
+  font-family: 'Space Mono', monospace; /* Use Space Mono font for h1 */
+  font-weight: bold; /* Make the h1 bold */
+}
+
+header p {
+  /* Style the subheading/description */
+  font-size: 1.25em; /* Make all paragraphs larger for better readability */
+  max-width: 500px;
+  margin: 1rem auto;
+  display: block; /* Use block to center with margin auto */
+  font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif; /* Use sans-serif font for better readability */
+}
+
+/* Add a white box with rounded corners and a soft shadow around the .header-content for better readability and visual appeal */
+.header-content {
+  background: rgba(255,255,255,0.96); /* White background with slight transparency */
+  border: solid 2px #0071c5; /* Light border to match Intel theme */
+  border-radius: 18px; /* Rounded corners for a friendly look */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08); /* Soft shadow for depth */
+  padding: 32px 28px; /* Add space inside the box */
+  margin: 0 auto 24px auto; /* Center and add space below */
+  max-width: 800px; /* Limit width for readability */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-content h1 {
+  color: #0071c5; /* Make the main heading Intel blue */
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Timeline Section Styles */
+section {
+  /* Make the timeline section larger and center cards in the viewport */
+  padding: 60px auto; /* More space above and below */
+  background: #e6f0fa; /* Light blue background behind the cards */
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 1rem; /* More space between cards */
+  min-height: 80vh; /* Section takes up 80% of the viewport height */
+  align-items: center; /* Center cards vertically in the section */
+  justify-content: flex-start; /* Align cards to the left so the first card is fully visible */
+  /* Hide scrollbar for a cleaner look (optional for beginners) */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #0071c5 #f9f9f9;
+}
+
+section > div {
+  /* Make each card take up the full viewport height and a smaller width */
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px; /* Slightly more rounded corners for a modern look */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 48px;
+  min-width: 320px; /* Larger minimum width for each card */
+  max-width: 350px;
+  height: 55vh; /* Reduce card height to make cards smaller */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s cubic-bezier(.4,2,.6,1);
+  margin: 0.3rem; /* Add margin around each card for spacing */
+  position: relative; /* Make card position relative for custom positioning */
+  left: 0.5rem; /* Move each card 0.5rem to the right */
+}
+
+section > div:hover {
+  /* Add a smooth hover animation for cards */
+  transform: translateY(-16px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 12px 32px rgba(0,113,197,0.15);
+  border-color: #0071c5;
+}
+
+section img {
+  /* Make images fit nicely in cards */
+  width: 350px; /* All images are the same width */
+  height: 180px; /* All images are the same height */
+  max-width: 350px;
+  max-height: 180px;
+  object-fit: cover; /* Crop images to fit the box if needed */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+section h2 {
+  /* Year heading style */
+  color: #0071c5;
+  margin-bottom: 4px;
+  font-size: 2.5em; /* Make the year heading even larger */
+  font-family: 'Space Mono', monospace; /* Use Space Mono font for h2 */
+  font-weight: 700; /* Make the year heading bold */
+}
+
+section h3 {
+  /* Card title style */
+  margin-bottom: 8px;
+  color: #222;
+  font-size: 1.3em; /* Make the card title a little smaller */
+  font-family: 'Space Mono', monospace; /* Use Space Mono font for h3 */
+  font-weight: 400; /* Regular weight */
+  position: relative; /* Needed for underline positioning */
+}
+
+section h3::after {
+  content: "";
+  display: block;
+  width: 100%; /* Underline spans the full width of the card */
+  height: 4px; /* Thickness of the underline */
+  background: #0071c5; /* Intel blue */
+  border-radius: 2px;
+  margin: 10px 0 0 0; /* Space above underline, no horizontal margin */
+}
+
+section p {
+  /* Card text style */
+  color: #444;
+  font-size: 1.25em; /* Make all paragraphs larger for better readability */
+  font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif; /* Use sans-serif font for better readability */
+}
+
+/* Hide the paragraph inside each card by default */
+section > div p {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+/* Show the paragraph when hovering on the card */
+section > div:hover p {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Arrow Buttons Styles */
+.arrow-btn {
+  position: static; /* Place arrows in normal flow, not fixed */
+  display: inline-block; /* Show arrows side by side */
+  background: #0071c5; /* Intel blue */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 2em;
+  cursor: pointer;
+  opacity: 0.8;
+  margin: 0 8px; /* Add space around arrows */
+  transition: background 0.2s, opacity 0.2s;
+  vertical-align: middle;
+}
+
+.arrow-btn:hover {
+  background: #005a99;
+  opacity: 1;
+}
+
+/* Center the arrow buttons below the cards */
+.arrows-container {
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+  height: auto; /* Remove fixed height so arrows are in the same vh as cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center and style the timeline message above the cards */
+.timeline-message {
+  /* Center the timeline message and match card paragraph size */
+  text-align: center; /* Center the text */
+  font-size: 1.25em; /* Match the card section paragraph size */
+  color: #0071c5; /* Use Intel blue for consistency */
+  margin: 1rem auto; /* Center and add space below */
+  max-width: 700px; /* Limit width for readability */
+  background: #e6f0fa; /* Light blue background to match section */
+  border-radius: 12px; /* Rounded corners for a friendly look */
+  padding: 18px 24px; /* Padding for comfort */
+  font-family: 'Space Mono', monospace; /* Match font style */
+  font-weight: 400;
+  display: block;
+}
+
+/* Button Styles */
+.intel-btn {
+  display: inline-block;
+  background: #0071c5; /* Intel blue */
+  color: #fff; /* White text */
+  max-width: 200px;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1em;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: solid 2px white; /* Border to match Intel theme */
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 24px auto 0 auto; /* Add space above, center horizontally */
+  box-shadow: 0 2px 8px rgba(0,113,197,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.intel-btn:hover {
+  background: #005a99;
+  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  section {
+    /* Stack cards vertically on mobile */
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: unset;
+    overflow-y: auto;
+    min-height: auto;
+    padding: 16px 0;
+    scroll-snap-type: none;
+  }
+  section > div {
+    min-width: 90vw;
+    max-width: 95vw;
+    width: 95vw;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0.3rem 0;
+    scroll-snap-align: unset;
+    left: 0;
+  }
+  section img {
+    max-width: 100%;
+    height: auto;
+  }
+  .arrows-container {
+    display: none; /* Hide arrow buttons on mobile devices */
+  }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  text-align: center; /* Center the text */
+  color: #0071c5; /* Intel blue for consistency */
+  font-size: 1em;
+  padding: 18px 0 12px 0; /* Add space above and below */
+  background: #e6f0fa; /* Light blue background to match the site */
+  margin-top: 32px;
+  border-top: 1px solid #c2d6ea; /* Subtle top border for separation */
+  font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif;
+}
+
+section p,
+header p,
+.timeline-message p,
+.site-footer p {
+  font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif;
+}
