@@ -187,6 +187,7 @@ h2 {
   margin: 0 8px; /* Add space around arrows */
   transition: background 0.2s, opacity 0.2s;
   vertical-align: middle;
+  font-family: 'Space Mono', monospace;
 }
 
 .arrow-btn:hover {
@@ -236,13 +237,26 @@ h2 {
   text-decoration: none;
   margin: 24px auto 0 auto; /* Add space above, center horizontally */
   box-shadow: 0 2px 8px rgba(0,113,197,0.10);
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1);
   cursor: pointer;
 }
 
 .intel-btn:hover {
-  background: #005a99;
-  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+  color: #005a99;
+  background: #e6f0fa;
+  border-color: #005a99;
+}
+
+/* Alternate style for the Contact Us button in the hero section */
+.hero-btn-alt {
+  background: #0071c5;
+  color: #fff;
+  border: 2px solid #0071c5;
+}
+.hero-btn-alt:hover {
+  color: #005a99;
+  background: #e6f0fa;
+  border-color: #005a99;
 }
 
 .container.my-5 {
@@ -330,6 +344,12 @@ body {
   font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
 }
 
+#column-1,
+#column-2,
+#column-3 {
+  border-bottom: solid 2px #005a99;
+}
+
 .site-footer {
   text-align: center; /* Center the text */
   color: #0071c5; /* Intel blue for consistency */
@@ -390,10 +410,13 @@ form button[type="submit"] {
   border: none;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,113,197,0.10);
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1);
   cursor: pointer;
+  font-family: 'Space Mono', monospace;
 }
+
 form button[type="submit"]:hover {
-  background: #005a99;
-  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+color: #005a99;
+background: #e6f0fa;
+border: solid 2px #005a99;
 }
