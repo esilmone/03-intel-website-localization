@@ -6,21 +6,21 @@
 
 /* Hero Section Styles */
 header {
-  /* Add a background color to the hero section */
-  background-image: url(img/boliviainteligente-0pzxkrcM30s-unsplash.jpg); /* Light blue for Intel theme */
-  opacity: 0.8;
-  padding: 40px 0; /* Add space above and below the hero */
+  /* Use a blue gradient background for the hero section */
+  background: linear-gradient(135deg, #0071c5 0%, #00b4d8 100%); /* Blue gradient */
+  padding: 24px 0; /* Less space above and below the hero */
   text-align: center; /* Center all text and images */
-  min-height: 100vh; /* Make the hero section take up the full viewport height */
+  min-height: 40vh; /* Make the hero section smaller */
   display: flex; /* Use flex to center content vertically */
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center content vertically */
 }
 
 header img {
-  /* Make the logo a bit smaller and add space below */
+  /* Center the logo in the hero section */
+  display: block;
+  margin: 0 auto 20px auto; /* Center horizontally and add space below */
   width: 150px;
-  margin-bottom: 20px;
 }
 
 header h1 {
@@ -65,7 +65,7 @@ header p {
 }
 
 /* Timeline Section Styles */
-section {
+#timeline-section {
   /* Make the timeline section larger and center cards in the viewport */
   padding: 60px auto; /* More space above and below */
   background: #e6f0fa; /* Light blue background behind the cards */
@@ -81,7 +81,7 @@ section {
   scrollbar-color: #0071c5 #f9f9f9;
 }
 
-section > div {
+#timeline-section > div {
   /* Make each card take up the full viewport height and a smaller width */
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -101,14 +101,14 @@ section > div {
   left: 0.5rem; /* Move each card 0.5rem to the right */
 }
 
-section > div:hover {
+#timeline-section > div:hover {
   /* Add a smooth hover animation for cards */
   transform: translateY(-16px) scale(1.05) rotate(-1deg);
   box-shadow: 0 12px 32px rgba(0,113,197,0.15);
   border-color: #0071c5;
 }
 
-section img {
+#timeline-section img {
   /* Make images fit nicely in cards */
   width: 350px; /* All images are the same width */
   height: 180px; /* All images are the same height */
@@ -122,7 +122,7 @@ section img {
   margin-bottom: 12px;
 }
 
-section h2 {
+h2 {
   /* Year heading style */
   color: #0071c5;
   margin-bottom: 4px;
@@ -131,7 +131,7 @@ section h2 {
   font-weight: 700; /* Make the year heading bold */
 }
 
-section h3 {
+#timeline-section h3 {
   /* Card title style */
   margin-bottom: 8px;
   color: #222;
@@ -141,7 +141,7 @@ section h3 {
   position: relative; /* Needed for underline positioning */
 }
 
-section h3::after {
+#timeline-section h3::after {
   content: "";
   display: block;
   width: 100%; /* Underline spans the full width of the card */
@@ -151,7 +151,7 @@ section h3::after {
   margin: 10px 0 0 0; /* Space above underline, no horizontal margin */
 }
 
-section p {
+#timeline-section p {
   /* Card text style */
   color: #444;
   font-size: 1.25em; /* Make all paragraphs larger for better readability */
@@ -159,14 +159,14 @@ section p {
 }
 
 /* Hide the paragraph inside each card by default */
-section > div p {
+#timeline-section > div p {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s;
 }
 
 /* Show the paragraph when hovering on the card */
-section > div:hover p {
+#timeline-section > div:hover p {
   opacity: 1;
   visibility: visible;
 }
@@ -187,6 +187,7 @@ section > div:hover p {
   margin: 0 8px; /* Add space around arrows */
   transition: background 0.2s, opacity 0.2s;
   vertical-align: middle;
+  font-family: 'Space Mono', monospace;
 }
 
 .arrow-btn:hover {
@@ -236,18 +237,64 @@ section > div:hover p {
   text-decoration: none;
   margin: 24px auto 0 auto; /* Add space above, center horizontally */
   box-shadow: 0 2px 8px rgba(0,113,197,0.10);
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1);
   cursor: pointer;
 }
 
 .intel-btn:hover {
-  background: #005a99;
-  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+  color: #005a99;
+  background: #e6f0fa;
+  border-color: #005a99;
+}
+
+/* Alternate style for the Contact Us button in the hero section */
+.hero-btn-alt {
+  background: #0071c5;
+  color: #fff;
+  border: 2px solid #0071c5;
+}
+.hero-btn-alt:hover {
+  color: #005a99;
+  background: #e6f0fa;
+  border-color: #005a99;
+}
+
+.container.my-5 {
+  /* Remove flex to prevent stacking issues on mobile */
+  display: block;
+  height: auto;
+  width: 100%;
+  margin: 0 auto 2rem auto;
+}
+
+/* Flexbox layout for the three-column info section below the timeline */
+.container.my-5 > .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center columns horizontally */
+  gap: 1.5rem; /* Space between columns */
+}
+.container.my-5 > .row > div {
+  flex: 1 1 250px; /* Each column grows, shrinks, and has a minimum width */
+  max-width: 350px;
+  min-width: 220px;
+  margin: 0 8px;
+  padding: 24px 12px;
+}
+@media (max-width: 900px) {
+  .container.my-5 > .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container.my-5 > .row > div {
+    max-width: 95vw;
+    min-width: 0;
+  }
 }
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  section {
+  #timeline-section {
     /* Stack cards vertically on mobile */
     flex-direction: column;
     gap: 1.2rem;
@@ -259,7 +306,7 @@ section > div:hover p {
     padding: 16px 0;
     scroll-snap-type: none;
   }
-  section > div {
+  #timeline-section > div {
     min-width: 90vw;
     max-width: 95vw;
     width: 95vw;
@@ -270,12 +317,22 @@ section > div:hover p {
     scroll-snap-align: unset;
     left: 0;
   }
-  section img {
+  #timeline-section img {
     max-width: 100%;
     height: auto;
   }
   .arrows-container {
     display: none; /* Hide arrow buttons on mobile devices */
+  }
+  .container.my-5 {
+    display: block !important;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .contact-form {
+    display: block !important;
+    width: 100%;
+    margin-top: 0;
   }
 }
 
@@ -284,6 +341,13 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
+}
+
+#column-1,
+#column-2,
+#column-3 {
+  border-bottom: solid 2px #005a99;
 }
 
 .site-footer {
@@ -297,9 +361,94 @@ body {
   font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif;
 }
 
+.site-footer a {
+  text-decoration: none;
+  color: #0071c5; /* Match the footer p color */
+  margin: 0 8px;
+  font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif;
+  transition: color 0.2s;
+}
+.site-footer a:hover {
+  color: #005a99;
+  text-decoration: underline;
+}
+
 section p,
 header p,
 .timeline-message p,
 .site-footer p {
   font-family: 'Be Vietnam Pro', 'Arial', 'Helvetica', sans-serif;
+}
+
+/* Center the contact form and style it with a border and hover effect */
+form {
+  display: block;
+  max-width: 420px;
+  margin: 2rem auto; /* Center the form horizontally and add space above */
+  border: 2px solid #0071c5; /* Solid Intel blue border */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07); /* Soft shadow */
+  padding: 28px 22px;
+  background: #fff;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+}
+/* Center the h2 heading in the contact form section */
+.contact-form h2 {
+  text-align: center;
+}
+.mb-3{
+  padding: 1rem; /* Add padding around the form fields */
+  margin: .5rem;
+}
+
+.contact-form{
+  background-color: #c2d6ea;;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+/* Center form labels and inputs */
+form .mb-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form .form-label {
+  position: relative;
+  left: 35px;
+  width: 100%;
+}
+form .form-control {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  form .form-control {
+    width: 100%;
+  }
+}
+
+form button[type="submit"] {
+  display: block;
+  margin: 2rem auto 0 auto; /* Center the button and add space above */
+  padding: 16px 40px; /* Make the button larger */
+  font-size: 1.25em; /* Larger text */
+  font-weight: bold;
+  color: #fff; /* White text for readability */
+  background: #0071c5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+color: #005a99;
+background: #e6f0fa;
+border: solid 2px #005a99;
 }
