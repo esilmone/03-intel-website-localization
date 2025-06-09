@@ -31,9 +31,13 @@
         and our planet.
       </p>
     </div>
-    <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/corporate-responsibility.html" class="intel-btn" target="_blank" rel="noopener">
-      Learn More
-    </a>
+    <div style="display: flex; justify-content: center; gap: 16px; margin-top: 12px;">
+      <!-- Contact Us Button scrolls to the contact form -->
+      <a href="#contact-form" class="intel-btn" style="background:#fff; color:#0071c5; border:2px solid #0071c5;">Contact Us</a>
+      <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/corporate-responsibility.html" class="intel-btn" target="_blank" rel="noopener">
+        Learn More
+      </a>
+    </div>
   </header>
 
   <div class="timeline-message">
@@ -180,6 +184,32 @@
         <p>Intel leads in technology innovation, creating solutions that power the future.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Contact Form Section: Simple and beginner-friendly -->
+  <section class="contact-form" id="contact-form">
+    <!-- Contact Form Heading -->
+    <h2>Contact Us</h2>
+    <!-- Simple Bootstrap form -->
+    <form>
+      <!-- Name Field -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <!-- Email Field -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <!-- Message Field -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Type your message"></textarea>
+      </div>
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" style="background:#0071c5; border:none;">Send</button>
+    </form>
   </section>
 
   <script>
