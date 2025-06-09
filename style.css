@@ -407,7 +407,6 @@ form button[type="submit"] {
   font-weight: bold;
   color: #fff; /* White text for readability */
   background: #0071c5;
-  border: none;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,113,197,0.10);
   transition: background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1);
