@@ -245,8 +245,12 @@ h2 {
   box-shadow: 0 4px 16px rgba(0,113,197,0.18);
 }
 
-.container.my-5{
-  height: 30vh; /* Add padding around the container */
+.container.my-5 {
+  /* Remove flex to prevent stacking issues on mobile */
+  display: block;
+  height: auto;
+  width: 100%;
+  margin: 0 auto 2rem auto;
 }
 
 /* Flexbox layout for the three-column info section below the timeline */
@@ -306,6 +310,16 @@ h2 {
   .arrows-container {
     display: none; /* Hide arrow buttons on mobile devices */
   }
+  .container.my-5 {
+    display: block !important;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .contact-form {
+    display: block !important;
+    width: 100%;
+    margin-top: 0;
+  }
 }
 
 body {
@@ -336,6 +350,7 @@ header p,
 
 /* Center the contact form and style it with a border and hover effect */
 form {
+  display: block;
   max-width: 420px;
   margin: 2rem auto; /* Center the form horizontally and add space above */
   border: 2px solid #0071c5; /* Solid Intel blue border */
